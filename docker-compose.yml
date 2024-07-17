@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ask_my_doc_service:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DOCUMENT_PATH=/app/Python_Exercise.docx
+    volumes:
+      - .:/app
